@@ -1,0 +1,101 @@
+{
+  "_about": "This file IS the ICP scoring model. It is data, not code, on purpose: a sales or RevOps leader should be able to read this file, disagree with a number, change it, and re-run the demo without touching Python. Every weight below is illustrative for a generic B2B seller of a mid-market software product and should be replaced with your own definition of a good customer.",
+
+  "banding": {
+    "revenue_bands_eur": [
+      { "label": "micro",      "max": 200000 },
+      { "label": "small",      "max": 1000000 },
+      { "label": "mid",        "max": 10000000 },
+      { "label": "upper_mid",  "max": 50000000 },
+      { "label": "enterprise", "max": null }
+    ],
+    "headcount_bands": [
+      { "label": "micro",      "max": 9 },
+      { "label": "small",      "max": 49 },
+      { "label": "medium",     "max": 249 },
+      { "label": "large",      "max": 999 },
+      { "label": "enterprise", "max": null }
+    ],
+    "industry_groups": {
+      "software": "technology",
+      "it_services": "technology",
+      "telecom": "technology",
+      "manufacturing": "industrial",
+      "industrial_equipment": "industrial",
+      "construction": "industrial",
+      "logistics": "industrial",
+      "wholesale_distribution": "industrial",
+      "retail": "commercial",
+      "hospitality": "commercial",
+      "consumer_goods": "commercial",
+      "professional_services": "services",
+      "financial_services": "services",
+      "healthcare": "services",
+      "education": "services",
+      "public_sector": "other",
+      "agriculture": "other"
+    }
+  },
+
+  "fit_model": {
+    "_comment": "Fit = static, slow-changing signals: who this company IS. Never mix with intent below.",
+    "weights": { "revenue_band": 0.30, "headcount_band": 0.20, "industry_group": 0.35, "region": 0.15 },
+    "revenue_band_scores": { "micro": 20, "small": 55, "mid": 100, "upper_mid": 85, "enterprise": 45 },
+    "headcount_band_scores": { "micro": 25, "small": 60, "medium": 100, "large": 80, "enterprise": 40 },
+    "industry_group_scores": { "technology": 100, "services": 85, "industrial": 70, "commercial": 40, "other": 15 },
+    "region_scores": {
+      "DACH": 90, "Benelux": 85, "Nordics": 80, "UK_I": 95,
+      "CEE": 75, "Iberia": 60, "Southern_EU": 55, "Overseas": 30
+    }
+  },
+
+  "intent_model": {
+    "_comment": "Intent = dynamic, time-decaying signals: is something happening RIGHT NOW that makes this a good moment to reach out. Recomputed on every scoring run, never cached like fit.",
+    "weights": { "hiring": 0.35, "funding": 0.30, "expansion": 0.20, "tech_adoption": 0.15 },
+    "hiring_points_per_open_role": 12,
+    "hiring_points_cap": 100,
+    "funding_event_max_points": 100,
+    "expansion_signal_points": 70,
+    "tech_adoption_signal_points": 60,
+    "recency_decay": {
+      "_comment": "A signal loses half its value every half_life_days. A 6-month-old 'funding round' is background noise, not timing.",
+      "half_life_days": 45,
+      "floor_points": 5
+    }
+  },
+
+  "tiering": {
+    "_comment": "Thresholds are calibrated against the synthetic universe in synth.py so that fit tiers roughly follow a 25/55/20 (A/B/C) split and intent tiers roughly follow a 10/25/65 (1/2/3) split. Recalibrate against your own data, these are not universal constants.",
+    "fit_thresholds": { "A": 82, "B": 58 },
+    "intent_thresholds": { "1": 25, "2": 8 },
+    "tier_notes": {
+      "A1": "Best-fit account, active buying signal now. Call today.",
+      "A2": "Best-fit account, moderate signal. Nurture into a trigger event.",
+      "A3": "Best-fit account, no signal. Long-cycle nurture, not a cold call target.",
+      "B1": "Workable fit, strong timing. Worth a call despite imperfect fit.",
+      "B2": "Workable fit, moderate timing. Standard pipeline.",
+      "B3": "Workable fit, no timing. Low priority, marketing-only.",
+      "C1": "Poor fit, active signal. Usually noise (wrong-size company reacting to something unrelated); verify before calling.",
+      "C2": "Poor fit, moderate signal. Deprioritize.",
+      "C3": "Poor fit, no signal. Suppress from active lists."
+    }
+  },
+
+  "contactability_model": {
+    "_comment": "Whether the record is actually actionable, independent of how good the account is. A perfect A1 you cannot reach is worth zero this quarter.",
+    "weights": { "phone_present": 0.20, "phone_not_shared": 0.30, "domain_verified": 0.30, "email_plausible": 0.20 },
+    "shared_phone_threshold": 4,
+    "_shared_phone_threshold_comment": "A phone number seen on this many or more distinct companies is treated as a shared line (accountant, registered-office agent, or call centre), not a direct company line."
+  },
+
+  "quality_gates": {
+    "min_contactability_to_call": 40,
+    "dedupe_on_normalized_name": true
+  },
+
+  "territory": {
+    "daily_cap_per_rep": 25,
+    "tier_mix_target": { "A1": 0.20, "A2": 0.15, "B1": 0.20, "B2": 0.25, "A3": 0.05, "B3": 0.10, "C1": 0.05 },
+    "cluster_by": "region"
+  }
+}

@@ -1,0 +1,11 @@
+# icp-scoring-toolkit has zero required third-party dependencies.
+# The toolkit itself is Python 3.11+ standard library only, and
+# `python -m icp_toolkit.demo` runs with nothing installed at all.
+
+# Needed to run the test suite:
+pytest>=7.4
+
+# Optional. Only useful if you want to load the synthetic universe into a
+# notebook and explore it as a DataFrame. Nothing in icp_toolkit imports
+# pandas, and the demo does not require it.
+# pandas>=2.0
