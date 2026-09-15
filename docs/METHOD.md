@@ -24,7 +24,7 @@ This is the single most consequential decision in the toolkit, covered at length
 
 ## 4. Contactability is a gate, not a score input
 
-A perfect-fit, high-intent account with no working phone number and an unverifiable domain is not this quarter's opportunity, it is a data-enrichment task. `quality.py` computes contactability as its own axis, and `territory.py` treats the configured minimum contactability score (`quality_gates.min_contactability_to_call`) as a hard gate on who ever appears on a call list, independent of how good the account otherwise looks.
+A perfect-fit, high-intent account with no working phone number and an unverifiable domain is not this quarter's opportunity, it is a data-enrichment task. `quality.py` produces the contactability evidence, `scoring.py` turns it into its own axis, and `territory.py` treats the configured minimum contactability score (`quality_gates.min_contactability_to_call`) as a hard gate on who ever appears on a call list, independent of how good the account otherwise looks.
 
 Two heuristics inside `quality.py` are worth calling out specifically because they generalize well beyond this toolkit:
 
