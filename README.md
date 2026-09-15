@@ -10,6 +10,28 @@ python -m icp_toolkit.demo
 
 No network access, no third-party dependencies, no API keys. Python 3.11+ and the standard library are enough.
 
+
+## Fit and intent, never averaged
+
+The core idea: a good-fit account you cannot act on and a poor-fit account
+that is buying right now are different problems, and blending them into one
+score hides both. Keep them on separate axes.
+
+```mermaid
+quadrantChart
+    title Fit vs intent
+    x-axis Low intent --> High intent
+    y-axis Low fit --> High fit
+    quadrant-1 A: fit + buying, call now
+    quadrant-2 Nurture: good fit, no trigger
+    quadrant-3 Deprioritise
+    quadrant-4 Qualify: buying, weaker fit
+```
+
+Contactability is then a third gate: an A-tier account with no reachable
+contact is not a call, it is a research task. The backtest reports coverage
+next to win rate so the ranking is not flattered by survivorship bias.
+
 ## Why most ICP scoring is wrong
 
 Most homegrown ICP scoring lives in a spreadsheet with a column of weights and a single output number. That number usually fails in one of three predictable ways:
