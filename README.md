@@ -17,16 +17,9 @@ The core idea: a good-fit account you cannot act on and a poor-fit account
 that is buying right now are different problems, and blending them into one
 score hides both. Keep them on separate axes.
 
-```mermaid
-quadrantChart
-    title Fit vs intent
-    x-axis Low intent --> High intent
-    y-axis Low fit --> High fit
-    quadrant-1 A: fit + buying, call now
-    quadrant-2 Nurture: good fit, no trigger
-    quadrant-3 Deprioritise
-    quadrant-4 Qualify: buying, weaker fit
-```
+<p align="center">
+  <img src="assets/scoring-flow.gif" alt="Fit and intent scored apart, then combined" width="860">
+</p>
 
 Contactability is then a third gate: an A-tier account with no reachable
 contact is not a call, it is a research task. The backtest reports coverage
