@@ -2,7 +2,7 @@
   <title id="t">ICP Scoring Toolkit</title>
   <desc id="d">Accounts land on a three by three grid of fit tier against intent tier, with the demo's real tier counts; the best-fit, active-signal cell is highlighted.</desc>
   <style>
-    .serif { font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif; }
+    .display { font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; letter-spacing: -0.01em; }
     .sans  { font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
     .mono  { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     .hot   { animation: pulse 6s ease-in-out infinite; }
@@ -10,31 +10,31 @@
     @media (prefers-reduced-motion: reduce) { * { animation: none !important } .hot { opacity: .6 } }
   </style>
 
-  <rect width="1200" height="400" fill="#F6F4EF"/>
-  <rect x=".5" y=".5" width="1199" height="399" fill="none" stroke="#DAD6CC"/>
+  <rect width="1200" height="400" fill="#F5F7FA"/>
+  <rect x=".5" y=".5" width="1199" height="399" fill="none" stroke="#D8DEE6"/>
 
   <!-- text column -->
-  <text x="64" y="82" class="mono" font-size="12" letter-spacing="1.8" fill="#7A8088">DARKANALYTICA</text>
-  <rect x="64" y="108" width="48" height="3" fill="#1F3A5F"/>
-  <text x="62" y="176" class="serif" font-size="46" font-weight="600" fill="#1B1F24">ICP Scoring Toolkit</text>
-  <text x="64" y="226" class="sans" font-size="19" fill="#4A5058">Turn a fuzzy ideal customer profile into a testable model:</text>
-  <text x="64" y="252" class="sans" font-size="19" fill="#4A5058">fit and intent on separate axes, gated, then backtested.</text>
-  <text x="64" y="330" class="mono" font-size="12" letter-spacing="1.2" fill="#7A8088">PYTHON  ·  STDLIB ONLY  ·  LEAD SCORING  ·  DATA QUALITY</text>
+  <text x="64" y="82" class="mono" font-size="12" letter-spacing="1.8" fill="#6B7688">DARKANALYTICA</text>
+  <rect x="64" y="108" width="48" height="3" fill="#0B2545"/>
+  <text x="62" y="176" class="display" font-size="46" font-weight="600" fill="#0E1726">ICP Scoring Toolkit</text>
+  <text x="64" y="226" class="sans" font-size="19" fill="#3D4A5C">Turn a fuzzy ideal customer profile into a testable model:</text>
+  <text x="64" y="252" class="sans" font-size="19" fill="#3D4A5C">fit and intent on separate axes, gated, then backtested.</text>
+  <text x="64" y="330" class="mono" font-size="12" letter-spacing="1.2" fill="#6B7688">PYTHON  ·  STDLIB ONLY  ·  LEAD SCORING  ·  DATA QUALITY</text>
 
-  <line x1="680" y1="56" x2="680" y2="344" stroke="#DAD6CC"/>
+  <line x1="680" y1="56" x2="680" y2="344" stroke="#D8DEE6"/>
 
   <!-- mechanism strip: fit x intent grid -->
   <g class="mono" font-size="12">
-    <text x="850" y="62" fill="#7A8088" letter-spacing="1">INTENT  →</text>
-    <text x="832" y="84" fill="#7A8088" text-anchor="middle">1</text>
-    <text x="922" y="84" fill="#7A8088" text-anchor="middle">2</text>
-    <text x="1012" y="84" fill="#7A8088" text-anchor="middle">3</text>
-    <text x="772" y="130" fill="#7A8088" text-anchor="middle">A</text>
-    <text x="772" y="200" fill="#7A8088" text-anchor="middle">B</text>
-    <text x="772" y="270" fill="#7A8088" text-anchor="middle">C</text>
-    <text x="748" y="200" fill="#7A8088" letter-spacing="1" text-anchor="middle" transform="rotate(-90 748 200)">FIT  →</text>
+    <text x="850" y="62" fill="#6B7688" letter-spacing="1">INTENT  →</text>
+    <text x="832" y="84" fill="#6B7688" text-anchor="middle">1</text>
+    <text x="922" y="84" fill="#6B7688" text-anchor="middle">2</text>
+    <text x="1012" y="84" fill="#6B7688" text-anchor="middle">3</text>
+    <text x="772" y="130" fill="#6B7688" text-anchor="middle">A</text>
+    <text x="772" y="200" fill="#6B7688" text-anchor="middle">B</text>
+    <text x="772" y="270" fill="#6B7688" text-anchor="middle">C</text>
+    <text x="748" y="200" fill="#6B7688" letter-spacing="1" text-anchor="middle" transform="rotate(-90 748 200)">FIT  →</text>
   </g>
-  <g stroke="#DAD6CC" stroke-width="1.5" fill="#fff">
+  <g stroke="#D8DEE6" stroke-width="1.5" fill="#fff">
     <rect x="787" y="92" width="90" height="70" rx="4"/>
     <rect x="877" y="92" width="90" height="70" rx="4"/>
     <rect x="967" y="92" width="90" height="70" rx="4"/>
@@ -45,10 +45,10 @@
     <rect x="877" y="232" width="90" height="70" rx="4"/>
     <rect x="967" y="232" width="90" height="70" rx="4"/>
   </g>
-  <rect class="hot" x="788" y="93" width="88" height="68" rx="4" fill="#A33A2B" fill-opacity=".14"/>
-  <rect x="787" y="92" width="90" height="70" rx="4" fill="none" stroke="#A33A2B" stroke-width="1.75"/>
-  <g class="mono" font-size="12" fill="#4A5058">
-    <text x="797" y="112" fill="#A33A2B">A1</text><text x="867" y="152" text-anchor="end" fill="#A33A2B">220</text>
+  <rect class="hot" x="788" y="93" width="88" height="68" rx="4" fill="#8A6A1F" fill-opacity=".14"/>
+  <rect x="787" y="92" width="90" height="70" rx="4" fill="none" stroke="#8A6A1F" stroke-width="1.75"/>
+  <g class="mono" font-size="12" fill="#3D4A5C">
+    <text x="797" y="112" fill="#8A6A1F">A1</text><text x="867" y="152" text-anchor="end" fill="#8A6A1F">220</text>
     <text x="887" y="112">A2</text><text x="957" y="152" text-anchor="end">215</text>
     <text x="977" y="112">A3</text><text x="1047" y="152" text-anchor="end">1053</text>
     <text x="797" y="182">B1</text><text x="867" y="222" text-anchor="end">398</text>
@@ -61,31 +61,31 @@
 
   <!-- accounts landing -->
   <g>
-    <circle r="4.5" fill="#A33A2B" opacity="0">
+    <circle r="4.5" fill="#8A6A1F" opacity="0">
       <animateMotion dur="6s" repeatCount="indefinite" path="M704,132 C760,132 800,127 832,127" keyPoints="0;1;1" keyTimes="0;.45;1" calcMode="linear"/>
       <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.1;.85;1"/>
     </circle>
-    <circle r="4.5" fill="#1F3A5F" opacity="0">
+    <circle r="4.5" fill="#0B2545" opacity="0">
       <animateMotion dur="6s" begin="1s" repeatCount="indefinite" path="M704,300 C760,300 900,200 1012,197" keyPoints="0;1;1" keyTimes="0;.5;1" calcMode="linear"/>
       <animate attributeName="opacity" dur="6s" begin="1s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.1;.85;1"/>
     </circle>
-    <circle r="4.5" fill="#5B7083" opacity="0">
+    <circle r="4.5" fill="#3E5C76" opacity="0">
       <animateMotion dur="6s" begin="2s" repeatCount="indefinite" path="M704,210 C780,210 880,127 1012,127" keyPoints="0;1;1" keyTimes="0;.5;1" calcMode="linear"/>
       <animate attributeName="opacity" dur="6s" begin="2s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.1;.85;1"/>
     </circle>
-    <circle r="4.5" fill="#1F3A5F" opacity="0">
+    <circle r="4.5" fill="#0B2545" opacity="0">
       <animateMotion dur="6s" begin="3s" repeatCount="indefinite" path="M704,90 C760,90 860,197 922,197" keyPoints="0;1;1" keyTimes="0;.5;1" calcMode="linear"/>
       <animate attributeName="opacity" dur="6s" begin="3s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.1;.85;1"/>
     </circle>
-    <circle r="4.5" fill="#5B7083" opacity="0">
+    <circle r="4.5" fill="#3E5C76" opacity="0">
       <animateMotion dur="6s" begin="4s" repeatCount="indefinite" path="M704,250 C760,250 900,267 1012,267" keyPoints="0;1;1" keyTimes="0;.5;1" calcMode="linear"/>
       <animate attributeName="opacity" dur="6s" begin="4s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.1;.85;1"/>
     </circle>
-    <circle r="4.5" fill="#1F3A5F" opacity="0">
+    <circle r="4.5" fill="#0B2545" opacity="0">
       <animateMotion dur="6s" begin="5s" repeatCount="indefinite" path="M704,170 C760,170 800,267 832,267" keyPoints="0;1;1" keyTimes="0;.5;1" calcMode="linear"/>
       <animate attributeName="opacity" dur="6s" begin="5s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.1;.85;1"/>
     </circle>
   </g>
-  <text x="1072" y="132" class="mono" font-size="12" fill="#A33A2B">call today</text>
-  <text x="712" y="352" class="mono" font-size="12" fill="#7A8088">FIT  ×  INTENT  =  NINE TIERS, NEVER AVERAGED</text>
+  <text x="1072" y="132" class="mono" font-size="12" fill="#8A6A1F">call today</text>
+  <text x="712" y="352" class="mono" font-size="12" fill="#6B7688">FIT  ×  INTENT  =  NINE TIERS, NEVER AVERAGED</text>
 </svg>
